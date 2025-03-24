@@ -49,3 +49,4 @@ class DriverDetailView(generic.DetailView):
     def get_queryset(self):
         return (Driver.objects.prefetch_related("cars__manufacturer").
                 get(pk=self.kwargs["pk"]))
+
